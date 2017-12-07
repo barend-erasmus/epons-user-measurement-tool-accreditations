@@ -1,0 +1,18 @@
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Measurement Tool</th>
+      <th>Score</th>
+      <th>Date Passed</th>
+      <th>Countdown in Days</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of user.MeasurementToolAccreditations" class="{{item.CountdownInDays < 10? 'text-danger' : ''}}">
+      <td>{{ item.Name }}</td>
+      <td>{{ item.Score }}</td>
+      <td>{{ item.DatePassed | date:'dd MMMM yyyy' }}</td>
+      <td>{{ item.CountdownInDays }}</td>
+    </tr>
+  </tbody>
+</table>
